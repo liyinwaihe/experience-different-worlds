@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>体验不同世界 · AI 人生模拟器提示词库</title>
+<meta name="description" content="104 个 AI 人生模拟器提示词免费分享：斗罗大陆、诡秘之主、哈利波特、三国乱世、狂飙……复制提示词发给 DeepSeek，即刻穿越开始你的第二人生。">
+<meta property="og:title" content="体验不同世界 · AI 人生模拟器提示词库">
+<meta property="og:description" content="104 个平行世界，299 万字完整设定。复制提示词，发给 AI，即刻开始你的第二人生。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"体验不同世界 · AI 人生模拟器提示词库","description":"104 个 AI 人生模拟器提示词免费分享，复制即可在 DeepSeek 中游玩。","inLanguage":"zh-CN"}
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body id="top">
+<div class="bg-aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+
+<header class="site-header">
+  <a class="brand" href="#top">🌌 体验不同世界</a>
+  <nav class="nav">
+    <a href="#worlds">全部世界</a>
+    <a href="#howto">玩法教程</a>
+  </nav>
+  <div class="search-wrap">
+    <svg class="s-ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="search" type="search" placeholder="搜索世界：斗罗 / 诡秘 / 民国…" autocomplete="off">
+  </div>
+</header>
+
+<main>
+  <!-- ══════════ Hero ══════════ -->
+  <section class="hero">
+    <p class="hero-kicker">AI 角色扮演 · 人生模拟器 · 提示词免费分享</p>
+    <h1>一键穿越<br><span class="grad" id="heroCount">104 个平行世界</span></h1>
+    <p class="hero-sub" id="heroSub">从斗罗大陆到霍格沃茨，从三国乱世到无间道。复制提示词发给 DeepSeek，
+    遵循你的选择、推动你的命运——第二人生，现在开局。</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#worlds">🚀 开始探索</a>
+      <a class="btn btn-ghost" href="#howto">📖 玩法教程</a>
+      <button class="btn btn-ghost" id="randomBtn" type="button">🎲 随机穿越</button>
+    </div>
+    <div class="hero-stats" id="heroStats"></div>
+  </section>
+
+  <!-- ══════════ 玩法教程 ══════════ -->
+  <section id="howto" class="howto">
+    <h2 class="sec-title">三步开局</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-no">①</div>
+        <h3>选一个世界</h3>
+        <p>在下方挑一个想穿越的世界，点击卡片，<b>复制全部提示词</b>（或下载 txt 文件）。</p>
+      </div>
+      <div class="step">
+        <div class="step-no">②</div>
+        <h3>发给 AI</h3>
+        <p>推荐 <b>DeepSeek 网页版</b>：粘贴提示词直接发送即可开局。建议用<b>快速模式</b>并打开<b>深度思考</b>，体验更佳。</p>
+      </div>
+      <div class="step">
+        <div class="step-no">③</div>
+        <h3>存档 · 续档</h3>
+        <p>对话太长容易跑偏：发送<b>「存档」</b>后，到新对话框重发提示词＋存档；或在原对话框<b>重发一遍提示词</b>即可续档。</p>
+      </div>
+    </div>
+    <div class="howto-extra">
+      <a class="video-link" href="assets/tutorial.mp4" download="01使用教学.mp4">📺 视频教程下载（MP4 · 15MB）</a>
+      <span class="hint">提示词也可下载 txt 后，以<b>文件格式</b>发送给 AI。</span>
+    </div>
+  </section>
+
+  <!-- ══════════ 世界库 ══════════ -->
+  <section id="worlds" class="worlds">
+    <div class="worlds-head">
+      <h2 class="sec-title">世界库</h2>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden>
+      <p class="empty-emoji">🔭</p>
+      <p>没有找到匹配的世界</p>
+      <button class="btn btn-ghost" id="resetBtn" type="button">清除筛选</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p class="f-brand">🌌 体验不同世界</p>
+  <p class="f-note" id="footMeta"></p>
+  <p class="f-disclaimer">本站为 AI 玩法提示词的学习交流分享，全部内容免费。所涉作品相关 IP 归原著作权人所有，
+  提示词均为爱好者二创，仅供个人娱乐，请勿用于商业用途；如有侵权请联系删除。</p>
+</footer>
+
+<!-- ══════════ 详情弹窗 ══════════ -->
+<div class="modal-mask" id="modal" hidden>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="m-close" id="mClose" type="button" aria-label="关闭">✕</button>
+    <div class="m-head">
+      <div class="m-tags" id="mTags"></div>
+      <h2 id="mTitle"></h2>
+      <p class="m-excerpt" id="mExcerpt"></p>
+      <div class="m-actions">
+        <button class="btn btn-primary" id="mCopy" type="button">📋 复制提示词</button>
+        <a class="btn btn-ghost" id="mDownload" download>⬇️ 下载 TXT</a>
+        <a class="btn btn-ghost" href="https://chat.deepseek.com/" target="_blank" rel="noopener">打开 DeepSeek ↗</a>
+      </div>
+      <p class="m-tip">💡 开局：粘贴全文直接发送。建议开启「深度思考」；对话过长时发送「存档」，新对话粘贴提示词＋存档继续。</p>
+    </div>
+    <pre class="m-text" id="mText">加载中…</pre>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部" hidden>↑</button>
+
+<script src="data/prompts.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
